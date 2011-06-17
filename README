@@ -1,0 +1,8 @@
+Here's the Visual Studio project for the tracking tutorial at AI Shack.
+If you're not using Visual Studio, just use the code to create a new
+project in your IDE. Make sure you link to the OpenCV libraries.
+
+Do whatever you want with the code :P
+
+Here's the tutorial that it comes with:
+http://www.aishack.in/2010/07/tracking-colored-objects-in-opencv/
