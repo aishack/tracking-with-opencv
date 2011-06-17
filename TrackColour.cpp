@@ -3,10 +3,7 @@
 
 #include "stdafx.h"
 
-#include "cv.h"
-#include "highgui.h"
-
-using namespace cv;
+#include <opencv2\opencv.hpp>
 
 IplImage* GetThresholdedImage(IplImage* img)
 {
@@ -26,37 +23,8 @@ IplImage* GetThresholdedImage(IplImage* img)
 
 int main()
 {
-
-	Mat A=Mat(3,3,CV_32FC1);
-Mat B=Mat(3,3,CV_32FC1);
-Mat C=Mat(3,3,CV_32FC1);
-
-float* ptr = A.ptr<float>(0);
-
-for(int i=1;i<10;i++)
-	ptr[i-1] = i;
-
-ptr = B.ptr<float>(0);
-
-ptr[0]=-1;
-ptr[1]=-2;
-ptr[2]=-1;
-ptr[3]=0;
-ptr[4]=0;
-ptr[5]=0;
-ptr[6]=1;
-ptr[7]=2;
-ptr[8]=1;
-
-	Mat kernel;
-	flip(B,kernel,-1);
-
-	Point anchor=Point(1,1);//set to the middle of the kernal
-
-	filter2D(A,C,-1,kernel,Point(1,1), 0, BORDER_CONSTANT);
-
 	// Initialize capturing live feed from the camera
-	/*CvCapture* capture = 0;
+	CvCapture* capture = 0;
 	capture = cvCaptureFromCAM(0);	
 
 	// Couldn't get a device? Throw an error and quit
@@ -143,6 +111,6 @@ ptr[8]=1;
     }
 
 	// We're done using the camera. Other applications can now use it
-	cvReleaseCapture(&capture);*/
+	cvReleaseCapture(&capture);
     return 0;
 }
